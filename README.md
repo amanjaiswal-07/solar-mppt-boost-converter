@@ -2,8 +2,6 @@
 
 A DC-DC **boost converter** controlled by an **Arduino Uno** that adjusts its PWM duty cycle with the **Perturb & Observe (P&O)** algorithm, so that a small solar panel is pushed toward its maximum power point. The project includes an LTspice simulation of the boost stage, a breadboard prototype, a perfboard prototype and outdoor tests with a 10 W class solar panel.
 
-Project report: *Chapter 8, Project 2: Arduino-Based MPPT for Solar Energy Harvesting*, submitted 24 April 2025.
-
 ![Panel and controller during an outdoor test](images/05_panel_and_controller_outdoor.jpg)
 
 ## Contents
