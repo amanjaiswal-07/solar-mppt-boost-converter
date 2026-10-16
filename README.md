@@ -72,9 +72,9 @@ Role of the main parts:
 
 ## How the circuit works
 
-![LTspice circuit of the boost converter](images/01_ltspice_circuit_fig8_1.jpg)
+![LTspice circuit of the boost converter](images/01_ltspice_circuit.jpg)
 
-*Fig. 8.1: Project circuit diagram (software)*
+*Project circuit diagram (software)*
 
 The power stage is a standard boost converter: panel, inductor, MOSFET to ground, diode, output capacitor and load.
 
@@ -143,7 +143,7 @@ Perturb & Observe: perturb the duty cycle a little, observe whether the input po
 
 ![Original flowchart from the report](images/08_flowchart_from_report.png)
 
-*Section 8.9: algorithm / flowchart from the report*
+*Algorithm flowchart from the project report*
 
 The same logic as implemented in the code, drawn as a flowchart:
 
@@ -179,21 +179,21 @@ Parameters of the implementation:
 
 The boost stage was simulated in LTspice with an 18 V source, 220 µH inductor, 470 µF output capacitor, 82 Ω load, an MBR735 diode and a BSZ036NE2LS MOSFET. The gate is driven by a pulse source `PULSE(0 5 0 10n 10n 12.5u 50u)`, which is 20 kHz at 25 % duty.
 
-![LTspice simulation result](images/02_ltspice_simulation_fig8_2.jpg)
+![LTspice simulation result](images/02_ltspice_simulation.jpg)
 
-*Fig. 8.2: Project circuit simulation (software). The output voltage starts near 29 V and settles around 25 V.*
+*Project circuit simulation (software). The output voltage starts near 29 V and settles around 25 V.*
 
 ## Hardware builds
 
 | | |
 |---|---|
-| ![Breadboard prototype](images/03_breadboard_fig8_3.jpg) | ![Perfboard prototype](images/04_perfboard_fig8_4_8_7.jpg) |
-| Fig. 8.3: circuit on breadboard | Fig. 8.4: circuit on perfboard (PCB) |
+| ![Breadboard prototype](images/03_breadboard.jpg) | ![Perfboard prototype](images/04_perfboard.jpg) |
+| Circuit on breadboard | Circuit on perfboard (PCB) |
 
 | | |
 |---|---|
-| ![Outdoor setup](images/06_outdoor_setup_fig8_5.jpg) | ![Panel and controller](images/05_panel_and_controller_outdoor.jpg) |
-| Fig. 8.5: setup with the solar panel (outdoor), laptop on the serial port | Panel and controller during the outdoor test |
+| ![Outdoor setup](images/06_outdoor_setup.jpg) | ![Panel and controller](images/05_panel_and_controller_outdoor.jpg) |
+| Setup with the solar panel (outdoor), laptop on the serial port | Panel and controller during the outdoor test |
 
 ## Test observations
 
@@ -201,22 +201,22 @@ These are the observations given in the report, read from the LCD and the Serial
 
 | Test | Conditions | Observation |
 |---|---|---|
-| Outdoor with solar panel (Fig. 8.6) | Sunlight | Input voltage fluctuates between 7 V and 9 V; output voltage between 17 V and 20 V |
-| Indoor with solar panel (Fig. 8.7) | Indoor light | Input 5 V to 6 V; output 13 V to 14 V. Current is in the microampere range, so the sensor could not sense it (the LCD shows -0.1 A) |
-| Bench power supply (Fig. 8.8) | 12 V supply | Output voltage fluctuates between 20 V and 23 V |
-| Serial output (Fig. 8.9) | Running MPPT | The duty cycle changes with the input power |
+| Outdoor with solar panel | Sunlight | Input voltage fluctuates between 7 V and 9 V; output voltage between 17 V and 20 V |
+| Indoor with solar panel | Indoor light | Input 5 V to 6 V; output 13 V to 14 V. Current is in the microampere range, so the sensor could not sense it (the LCD shows -0.1 A) |
+| Bench power supply | 12 V supply | Output voltage fluctuates between 20 V and 23 V |
+| Serial output | Running MPPT | The duty cycle changes with the input power |
 
-![LCD during the outdoor run](images/07_lcd_outdoor_fig8_6.jpg)
+![LCD during the outdoor run](images/07_lcd_outdoor.jpg)
 
-*Fig. 8.6: output with the solar panel, input 7 V to 9 V and output 17 V to 20 V (outdoor)*
+*Output with the solar panel, input 7 V to 9 V and output 17 V to 20 V (outdoor)*
 
-![LCD on a bench supply](images/09_lcd_bench_supply_fig8_8.jpg)
+![LCD on a bench supply](images/09_lcd_bench_supply.jpg)
 
-*Fig. 8.8: output with a 12 V power supply, output 20 V to 23 V*
+*Output with a 12 V power supply, output 20 V to 23 V*
 
-Serial Monitor excerpt (Fig. 8.9, "Duty cycle is changing with the input power (MPPT)"):
+Serial Monitor excerpt ("Duty cycle is changing with the input power (MPPT)"):
 
-![Serial monitor](images/10_serial_monitor_fig8_9.jpg)
+![Serial monitor](images/10_serial_monitor.jpg)
 
 | Vin [V] | Iin [A] | Power [W] | Duty | Vout [V] | Iout [A] |
 |---|---|---|---|---|---|
@@ -228,7 +228,7 @@ Serial Monitor excerpt (Fig. 8.9, "Duty cycle is changing with the input power (
 
 **Requirements:** Arduino IDE, Arduino Uno, and the **LiquidCrystal I2C** library (Library Manager).
 
-1. Build the circuit of Fig. 8.1 with the parts in the table above.
+1. Build the circuit shown in the circuit diagram above with the parts in the components table.
 2. Connect the sensors and display to the Arduino as follows (from the code):
 
    | Arduino pin | Connected to |
@@ -252,7 +252,7 @@ If your LCD does not respond, change the I2C address `0x27` in the sketch (many 
 .
 ├── README.md
 ├── mppt_arduino/
-│   └── mppt_arduino.ino        Arduino sketch from the report (Section 8.8)
+│   └── mppt_arduino.ino        Arduino sketch from the project report
 └── images/                     circuit, simulation, hardware photos, flowchart, results
 ```
 
@@ -275,4 +275,4 @@ Stated plainly, so that the results above are read correctly:
 
 ## Author
 
-[Your Name] · [LinkedIn](https://www.linkedin.com/in/your-profile) · [GitHub](https://github.com/amanjaiswal-07)
+**Aman Jaiswal** · [LinkedIn](https://www.linkedin.com/in/aman-jaiswal-aa31b51b5) · [GitHub](https://github.com/amanjaiswal-07)
